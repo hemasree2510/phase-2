@@ -1,0 +1,36 @@
+stock_forecasting_algorithms = {
+    "Machine Learning Regression Algorithms": [
+        "Linear Regression",
+        "KNN Regressor",
+        "SVM Regressor"
+    ],
+    "Time Series Forecasting": [
+        "ARIMA (Auto Regressive Integrated Moving Average)",
+        "FB-Prophet"
+    ],
+    "Deep Learning Algorithms": [
+        "GRU",
+        "Long Short Term Memory (LSTM)"
+    ],
+    "Ensemble Learning Algorithms": [
+        "Random Forest",
+        "XG-Boost",
+        "XG-Boost+LSTM",
+        "E-SVR-RF",
+        "Blending Ensemble (LSTM+GRU)"
+    ]
+}
+
+# Function to print the structure
+def print_flowchart(chart, indent=0):
+    for key, value in chart.items():
+        print("    " * indent + str(key))
+        if isinstance(value, dict):
+            print_flowchart(value, indent + 1)
+        elif isinstance(value, list):
+            for item in value:
+                print("    " * (indent + 1) + str(item))
+
+# Print the flowchart
+print("Stock Forecasting Algorithms")
+print_flowchart(stock_forecasting_algorithms, indent=1)
